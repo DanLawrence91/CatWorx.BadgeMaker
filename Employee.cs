@@ -5,7 +5,7 @@ namespace CatWorx.BadgeMaker
     class Employee
     // properties declared in body of the class with their types
     {
-        //Protection levels given default of private so can only be accessed in class itself
+        // Protection levels - given default of private so can only be accessed in class itself
         // use public access modifier to use within the program
         // use of property access is part of OOP Encapsulation - have full control over whether something usable everywhere or not
         private string FirstName;
@@ -27,7 +27,7 @@ namespace CatWorx.BadgeMaker
         public int GetId(){
             return Id;
         }
-        public string GetPhotoURL(){
+        public string GetPhotoUrl(){
             return PhotoUrl;
         }
     }

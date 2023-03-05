@@ -1,4 +1,4 @@
-﻿// using = similar to reuire or import in node
+﻿// using = similar to require or import in node
 using System;
 using System.Collections.Generic;
 
@@ -31,30 +31,15 @@ namespace CatWorx.BadgeMaker
            return employees;
         }
 
-        //any method not returning a value must be defined to return void
-        static void PrintEmployees(List<Employee> employees)
-        {
-           for (int i = 0; i < employees.Count; i++)
-           {
-            string template = "{0, -10}\t{1,-20}\t{2}";
-            // String.Format takes template (above) and fills placeholder with values
-            // template here takes first arg {0, -10} (id) to be left-aligned and padded 10 characters
-            // \t prints tab character
-            // {1, -20} next arg is left aligned and padded 20 characters
-            // {2} printed with no formatting 
-            Console.WriteLine(String.Format(template, employees[i].GetId(), employees[i].GetFullName(), employees[i].GetPhotoURL()));
-           }
-        }
-
-         static void Main(string[] args)
+        static void Main(string[] args)
         // main is entry point to application - invoked when program runs and where code placed. must be nested in a class
         //only one entry point to a program
         //void signifies return of this executable method is void
         //static impliues scope is class level, not object level so dont need to create a new class instance
         {
            List<Employee> employees = GetEmployees();
-           PrintEmployees(employees);
-           
+           Util.PrintEmployees(employees);
+           Util.MakeCSV(employees);
         }
     }
 }
